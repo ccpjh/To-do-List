@@ -7,7 +7,7 @@ const DiaryList = ({ onRemove, diaryList }) => {
             <h4>{diaryList.length}개의 일기가 있습니다.</h4>
             <div>
                 {diaryList.map((it) => (
-                    <DiaryItem onDelete={onRemove} key={it.id} {...it} />
+                    <DiaryItem onRemove={onRemove} key={it.id} {...it} />
                 ))}
             </div>
         </div>
