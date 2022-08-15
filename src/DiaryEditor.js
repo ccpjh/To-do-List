@@ -1,11 +1,11 @@
-import { useState, useRef } from 'react';
+import { useState, useRef } from "react";
 
-const DiaryEditor = ({onCreate}) => {
+const DiaryEditor = ({ onCreate }) => {
     const [state, setState] = useState({
-        author: '',
-        content: '',
-        emotion: 1
-    })
+        author: "",
+        content: "",
+        emotion: 1,
+    });
 
     const authorInput = useRef();
     const contentInput = useRef();
@@ -27,12 +27,12 @@ const DiaryEditor = ({onCreate}) => {
             return;
         }
         onCreate(state.author, state.content, state.emotion);
-        alert('저장 성공');
+        alert("저장 성공");
         setState({
-            author: '',
-            content: '',
-            emotion: 1
-        })
+            author: "",
+            content: "",
+            emotion: 1,
+        });
     };
 
     return (
@@ -42,7 +42,7 @@ const DiaryEditor = ({onCreate}) => {
                 <input ref={authorInput} name="author" type="text" value={state.author} onChange={handleChangeState} />
             </div>
             <div>
-                <textarea ref={ contentInput}  name="content" value={state.content} onChange={handleChangeState}></textarea>
+                <textarea ref={contentInput} name="content" value={state.content} onChange={handleChangeState}></textarea>
             </div>
             <div>
                 <span>감정점수 : </span>
@@ -55,9 +55,11 @@ const DiaryEditor = ({onCreate}) => {
                 </select>
             </div>
             <div>
-                <button type="button" onClick={handleSubmit}>저장</button>
+                <button type="button" onClick={handleSubmit}>
+                    저장
+                </button>
             </div>
         </div>
     );
-}
-export default DiaryEditor 
+};
+export default DiaryEditor;
